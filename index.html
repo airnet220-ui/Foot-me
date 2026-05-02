@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="FootballPro - Seu aplicativo completo para acompanhar futebol em tempo real com placar ao vivo">
+    <meta name="theme-color" content="#1abc9c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="FootballPro">
+    
+    <title>FootballPro - Seu App de Futebol</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Ícones -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231abc9c' width='192' height='192'/><text x='50%' y='50%' font-size='120' fill='white' text-anchor='middle' dy='.3em'>⚽</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231abc9c' width='192' height='192'/><text x='50%' y='50%' font-size='120' fill='white' text-anchor='middle' dy='.3em'>⚽</text></svg>">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navegação -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-futbol"></i>
+                <span>FootballPro<b></b></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#placar">Placar</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>FootballPro</h1>
+            <p>Seu aplicativo completo para acompanhar futebol em tempo real</p>
+            <button class="btn btn-primary">Baixar App</button>
+            <button class="btn btn-secondary">Saiba Mais</button>
+        </div>
+        <div class="hero-image">
+            <i class="fas fa-users"></i>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <h2>Sobre o FootballPro</h2>
+            <p class="section-subtitle">Tudo que você precisa para acompanhar futebol no seu celular</p>
+            
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <h3>Por que escolher o FootballPro?</h3>
+                    <p>FootballPro é o aplicativo mais completo para fãs de futebol. Acompanhe seus times favoritos, receba notificações de gols em tempo real e compete com amigos em fantásticos desafios.</p>
+                    <ul class="features-list">
+                        <li><strong>✓ Placar ao Vivo</strong> - Atualizações instantâneas</li>
+                        <li><strong>✓ Notificações</strong> - Nunca perca um gol</li>
+                        <li><strong>✓ Estatísticas</strong> - Dados detalhados de jogadores</li>
+                        <li><strong>✓ Comunidade</strong> - Conecte-se com outros fãs</li>
+                    </ul>
+                </div>
+                <div class="sobre-image">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Features -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Recursos Principais</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Placar ao Vivo</h3>
+                    <p>Acompanhe todos os jogos em tempo real com atualizações instantâneas do placar, gols e lances.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bell"></i>
+                    <h3>Notificações Push</h3>
+                    <p>Receba alertas sobre gols, cartões amarelos, vermelhos e trocas de jogadores do seu time.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Tabela Atualizada</h3>
+                    <p>Acompanhe a classificação das principais competições nacionais e internacionais.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-user-friends"></i>
+                    <h3>Fantasy League</h3>
+                    <p>Crie seu próprio time e compete com amigos em emocionantes torneios virtuais.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Estatísticas</h3>
+                    <p>Análises detalhadas de desempenho de jogadores e times ao longo da temporada.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Comunidade</h3>
+                    <p>Conecte-se com fãs de futebol do mundo todo e compartilhe seus momentos favoritos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Placar -->
+    <section id="placar" class="placar">
+        <div class="container">
+            <h2>Últimos Resultados</h2>
+            <div class="placar-grid">
+                <div class="placar-card">
+                    <div class="time-1">
+                        <div class="escudo"><i class="fas fa-shield-alt"></i></div>
+                        <span>Flamengo</span>
+                    </div>
+                    <div class="resultado">
+                        <span class="gol">2</span>
+                        <span class="vs">x</span>
+                        <span class="gol">1</span>
+                    </div>
+                    <div class="time-2">
+                        <span>Botafogo</span>
+                        <div class="escudo"><i class="fas fa-shield-alt"></i></div>
+                    </div>
+                </div>
+
+                <div class="placar-card">
+                    <div class="time-1">
+                        <div class="escudo"><i class="fas fa-shield-alt"></i></div>
+                        <span>Palmeiras</span>
+                    </div>
+                    <div class="resultado">
+                        <span class="gol">3</span>
+                        <span class="vs">x</span>
+                        <span class="gol">0</span>
+                    </div>
+                    <div class="time-2">
+                        <span>Corinthians</span>
+                        <div class="escudo"><i class="fas fa-shield-alt"></i></div>
+                    </div>
+                </div>
+
+                <div class="placar-card">
+                    <div class="time-1">
+                        <div class="escudo"><i class="fas fa-shield-alt"></i></div>
+                        <span>Santos</span>
+                    </div>
+                    <div class="resultado">
+                        <span class="gol">1</span>
+                        <span class="vs">x</span>
+                        <span class="gol">1</span>
+                    </div>
+                    <div class="time-2">
+                        <span>São Paulo</span>
+                        <div class="escudo"><i class="fas fa-shield-alt"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Download -->
+    <section class="download">
+        <div class="container">
+            <h2>Baixe Agora</h2>
+            <p>Disponível para iOS e Android</p>
+            <div class="download-buttons">
+                <button class="btn-download">
+                    <i class="fab fa-apple"></i>
+                    <span>App Store</span>
+                </button>
+                <button class="btn-download">
+                    <i class="fab fa-google-play"></i>
+                    <span>Google Play</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="contato">
+        <div class="container">
+            <h2>Fale Conosco</h2>
+            <div class="contato-content">
+                <form class="contact-form">
+                    <input type="text" placeholder="Seu Nome" required>
+                    <input type="email" placeholder="Seu Email" required>
+                    <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+                
+                <div class="contato-shortcuts">
+                    <div class="shortcut-card">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>WhatsApp</h3>
+                        <p>Chat com nosso time</p>
+                        <a href="https://wa.me/244 943 908 686?text=Olá%20FootballPro!%20Tenho%20uma%20dúvida." target="_blank" class="btn btn-secondary btn-small">
+                            <i class="fab fa-whatsapp"></i> Abrir WhatsApp
+                        </a>
+                    </div>
+                    
+                    <div class="shortcut-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Instalar App</h3>
+                        <p>Use como aplicativo</p>
+                        <button id="install-btn" class="btn btn-secondary btn-small" style="display:none;">
+                            <i class="fas fa-download"></i> Instalar
+                        </button>
+                        <p id="installed-msg" class="installed-msg" style="display:none;">✅ App Instalado!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>FootballPro</h4>
+                    <p>O melhor app de futebol para fãs apaixonados.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="https://wa.me/244943908686?text=Olá%20FootballPro!" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FootballPro. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/244943908686?text=Olá%20FootballPro!" target="_blank" class="whatsapp-float" title="Clique para abrir WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(reg => console.log('Service Worker registrado com sucesso'))
+                .catch(err => console.log('Erro ao registrar Service Worker:', err));
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
