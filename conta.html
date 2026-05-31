@@ -1,0 +1,413 @@
+﻿<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Configurações da Conta AirNet - Gerencie suas preferências e configurações pessoais.">
+    <meta name="keywords" content="conta AirNet, configurações, privacidade, notificações, tema, senha">
+    <link rel="stylesheet" href="Asserts/Css/stylr.css">
+    <link rel="shortcut icon" href="Asserts/img/logo.png-p1.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <title>Configurações da Conta | AirNet</title>
+</head>
+<body>
+    <header class="cabecalho">
+    <!-- #=======Nav-bar======== -->
+        <nav class="nav-bar">
+            <!-- #=======Nav-Logo======= -->
+            <a href="sites.html" id="nav-logo">SITEs<span class="net">Net</span></a>
+            <div class="nav-mobile">
+                <span class="nav-toggle" aria-label="Abrir menu">&#9776;</span>
+                <ul class="nav-lista">
+                    <li class="nav-item"><a href="inicio.html">Início</a></li>
+                    <li class="nav-item"><a href="serviços.html">Serviços</a></li>
+                    <li class="nav-item"><a href="divulgação.html">Divulgações</a></li>
+                    <li class="nav-item"><a href="contactos.html">Contactos</a></li>
+                    <li class="nav-item"><a href="parceiros.html">Parceiros</a></li>
+                    <li class="nav-item"><a href="busca.html">Busca</a></li>
+                    <li class="nav-item"><a href="canal-whatsapp.html">WhatsApp</a></li>
+                </ul>
+            </div>
+        </nav> 
+     </header>
+
+     <!-- SEÇÃO CONFIGURAÇÕES DA CONTA -->
+     <section class="section-account-settings">
+        <div class="settings-header">
+            <h2><i class="fas fa-cog"></i> Configurações da Conta</h2>
+            <p>Gerencie suas preferências, privacidade e configurações pessoais</p>
+        </div>
+
+        <div class="settings-grid">
+            <!-- Perfil -->
+            <div class="settings-section">
+                <h3><i class="fas fa-user"></i> Perfil</h3>
+                <div class="setting-item">
+                    <label for="profile-name">Nome:</label>
+                    <input type="text" id="profile-name" placeholder="Seu nome completo">
+                </div>
+                <div class="setting-item">
+                    <label for="profile-email">Email:</label>
+                    <input type="email" id="profile-email" placeholder="seu@email.com" readonly>
+                </div>
+                <div class="setting-item">
+                    <label for="profile-bio">Biografia:</label>
+                    <textarea id="profile-bio" placeholder="Conte um pouco sobre você..." rows="3"></textarea>
+                </div>
+                <button class="btn-setting" onclick="saveProfile()">Salvar Perfil</button>
+            </div>
+
+            <!-- SeguranÃ§a -->
+            <div class="settings-section">
+                <h3><i class="fas fa-shield-alt"></i> Segurança</h3>
+                <div class="setting-item">
+                    <label for="current-password">Senha Atual:</label>
+                    <input type="password" id="current-password" placeholder="Digite sua senha atual">
+                </div>
+                <div class="setting-item">
+                    <label for="new-password">Nova Senha:</label>
+                    <input type="password" id="new-password" placeholder="Digite a nova senha">
+                </div>
+                <div class="setting-item">
+                    <label for="confirm-password">Confirmar Nova Senha:</label>
+                    <input type="password" id="confirm-password" placeholder="Confirme a nova senha">
+                </div>
+                <button class="btn-setting" onclick="changePassword()">Alterar Senha</button>
+            </div>
+
+            <!-- AparÃªncia -->
+            <div class="settings-section">
+                <h3><i class="fas fa-palette"></i> Aparência</h3>
+                <div class="setting-item">
+                    <span>Tema:</span>
+                    <select id="theme-select">
+                        <option value="light">Claro</option>
+                        <option value="dark">Escuro</option>
+                        <option value="auto">Automático</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <span>Idioma:</span>
+                    <select id="language-select">
+                        <option value="pt">Português</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+                <button class="btn-setting" onclick="saveAppearance()">Salvar Aparência</button>
+            </div>
+
+            <!-- Privacidade -->
+            <div class="settings-section">
+                <h3><i class="fas fa-lock"></i> Privacidade</h3>
+                <div class="setting-item toggle">
+                    <span>Perfil PÃºblico:</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="public-profile">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item toggle">
+                    <span>Mostrar Online:</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="show-online" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item toggle">
+                    <span>Compartilhar Atividades:</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="share-activity">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- NotificaÃ§Ãµes -->
+            <div class="settings-section">
+                <h3><i class="fas fa-bell"></i> NotificaÃ§Ãµes</h3>
+                <div class="setting-item toggle">
+                    <span>Email de Projetos:</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="email-projects" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item toggle">
+                    <span>Email de AtualizaÃ§Ãµes:</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="email-updates" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item toggle">
+                    <span>NotificaÃ§Ãµes Push:</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="push-notifications">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item toggle">
+                    <span>NotificaÃ§Ãµes do ChatBot:</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="chat-notifications" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Aplicativo -->
+            <div class="settings-section">
+                <h3><i class="fas fa-mobile-alt"></i> Aplicativo</h3>
+                <p>Instale o AirNet como aplicativo no seu dispositivo para uma experiÃªncia melhor.</p>
+                <button id="install-btn" class="btn-setting" style="display: none;">Instalar App</button>
+                <p id="install-text">O botÃ£o de instalaÃ§Ã£o aparecerÃ¡ quando disponÃ­vel no seu navegador.</p>
+                <div class="setting-item toggle">
+                    <span>Modo Offline:</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="offline-mode">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Conta -->
+            <div class="settings-section danger">
+                <h3><i class="fas fa-exclamation-triangle"></i> Gerenciamento da Conta</h3>
+                <button class="btn-setting secondary" onclick="exportData()">Exportar Dados</button>
+                <button class="btn-setting danger" onclick="deleteAccount()">Eliminar Conta</button>
+            </div>
+        </div>
+     </section>
+
+     <footer class="rodape">
+        <div class="rodape-btns">
+            <a class="btn-footer" href="Inscreve-se.html"><i class="fas fa-user-plus"></i> Inscreve-se</a>
+            <a class="btn-footer btn-apoiar" href="apoiar.html"><i class="fas fa-heart"></i> Apoiar</a>
+        </div>
+            <div id="airia-chatbot">
+                <button id="airia-toggle" class="airia-button" aria-label="Abrir chat AirIA">
+                    <span class="airia-logo">AI</span>
+                </button>
+                <div id="airia-chat" class="airia-chat-window">
+                    <div class="airia-header">
+                        <span>AirIA - Assistente Virtual</span>
+                        <button id="airia-close">&times;</button>
+                    </div>
+                    <div id="airia-messages" class="airia-messages">
+                        <div class="airia-message airia-bot">
+                            <span class="airia-avatar">🤖</span>
+                            <div class="airia-bubble">Olá! Sou a AirIA, sua assistente virtual. Como posso ajudar você hoje?</div>
+                        </div>
+                    </div>
+                    <div class="airia-input-area">
+                        <input type="text" id="airia-input" placeholder="Digite sua mensagem..." />
+                        <button id="airia-send">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+        <!-- BotÃ£o Flutuante WhatsApp -->
+        <a href="canal-whatsapp.html" class="whatsapp-float" title="Canal WhatsApp AirNet">
+            <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
+        </a>
+    </footer>
+
+      <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4><span>Air</span>Net</h4>
+                    <p>EstratÃ©gias inovadoras para marcas prontas para causar impacto.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links RÃ¡pidos</h4>
+                    <ul>
+                        <li><a href="inicio.html">🏠 Início</a></li>
+                        <li><a href="serviços.html">⚙️ Serviços</a></li>
+                        <li><a href="contactos.html">📞 Contactos</a></li>
+                        <li><a href="menssagens.html">💬 Mensagens</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="https://wa.me/244943908686?text=Olá%20Olá%20AirNet!" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="facebook.com" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com/airnet220" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com" title="X">𝕏</a>
+                        <a href="Youtube.com" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/groups/18491007/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.tiktok.com/@airnet28?is_from_webapp=1&sender_device=pc" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AirNet. Todos os direitos reservados.</p>
+            </div>
+
+            <!-- AirIA Chatbot -->
+            </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/compromise@14.0.0/builds/compromise.min.js"></script>
+    <script src="Asserts/js/airia-banais.js"></script>
+    <script src="Asserts/js/script.js"></script>
+    <script>
+        // Load user data
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = getCurrentUser();
+            if (!user) {
+                window.location.href = 'inicio.html';
+                return;
+            }
+
+            // Populate form fields
+            document.getElementById('profile-name').value = user.name || '';
+            document.getElementById('profile-email').value = user.email || '';
+            document.getElementById('profile-bio').value = user.bio || '';
+
+            // Load settings
+            const settings = user.settings || {};
+            document.getElementById('theme-select').value = settings.theme || 'light';
+            document.getElementById('language-select').value = settings.language || 'pt';
+            document.getElementById('public-profile').checked = settings.publicProfile !== false;
+            document.getElementById('show-online').checked = settings.showOnline !== false;
+            document.getElementById('share-activity').checked = settings.shareActivity !== false;
+            document.getElementById('email-projects').checked = settings.emailProjects !== false;
+            document.getElementById('email-updates').checked = settings.emailUpdates !== false;
+            document.getElementById('push-notifications').checked = settings.pushNotifications || false;
+            document.getElementById('chat-notifications').checked = settings.chatNotifications !== false;
+            document.getElementById('offline-mode').checked = settings.offlineMode || false;
+
+            // Apply current theme
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', currentTheme);
+        });
+
+        function saveProfile() {
+            const user = getCurrentUser();
+            user.name = document.getElementById('profile-name').value.trim();
+            user.bio = document.getElementById('profile-bio').value.trim();
+
+            localStorage.setItem('airnetUser', JSON.stringify(user));
+            alert('Perfil salvo com sucesso!');
+        }
+
+        function changePassword() {
+            const current = document.getElementById('current-password').value;
+            const newPass = document.getElementById('new-password').value;
+            const confirm = document.getElementById('confirm-password').value;
+
+            if (!current || !newPass || !confirm) {
+                alert('Preencha todos os campos!');
+                return;
+            }
+
+            if (newPass !== confirm) {
+                alert('As senhas nÃ£o coincidem!');
+                return;
+            }
+
+            if (newPass.length < 6) {
+                alert('A nova senha deve ter pelo menos 6 caracteres!');
+                return;
+            }
+
+            // In a real app, this would verify current password and update
+            alert('Senha alterada com sucesso! (Funcionalidade em desenvolvimento)');
+        }
+
+        function saveAppearance() {
+            const user = getCurrentUser();
+            const theme = document.getElementById('theme-select').value;
+            const language = document.getElementById('language-select').value;
+
+            user.settings = user.settings || {};
+            user.settings.theme = theme;
+            user.settings.language = language;
+
+            localStorage.setItem('airnetUser', JSON.stringify(user));
+
+            // Apply theme
+            if (theme === 'auto') {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.body.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+            } else {
+                document.body.setAttribute('data-theme', theme);
+            }
+            localStorage.setItem('theme', theme);
+
+            alert('AparÃªncia salva com sucesso!');
+        }
+
+        // Auto-save privacy settings
+        document.querySelectorAll('#public-profile, #show-online, #share-activity, #email-projects, #email-updates, #push-notifications, #chat-notifications, #offline-mode').forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const user = getCurrentUser();
+                user.settings = user.settings || {};
+                user.settings.publicProfile = document.getElementById('public-profile').checked;
+                user.settings.showOnline = document.getElementById('show-online').checked;
+                user.settings.shareActivity = document.getElementById('share-activity').checked;
+                user.settings.emailProjects = document.getElementById('email-projects').checked;
+                user.settings.emailUpdates = document.getElementById('email-updates').checked;
+                user.settings.pushNotifications = document.getElementById('push-notifications').checked;
+                user.settings.chatNotifications = document.getElementById('chat-notifications').checked;
+                user.settings.offlineMode = document.getElementById('offline-mode').checked;
+
+                localStorage.setItem('airnetUser', JSON.stringify(user));
+            });
+        });
+
+        // PWA Install
+        let deferredPrompt;
+        const installBtn = document.getElementById('install-btn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.style.display = 'block';
+            document.getElementById('install-text').style.display = 'none';
+        });
+
+        installBtn.addEventListener('click', () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    }
+                    deferredPrompt = null;
+                });
+            }
+        });
+
+        function exportData() {
+            const user = getCurrentUser();
+            const dataStr = JSON.stringify(user, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+
+            const exportFileDefaultName = 'airnet-dados.json';
+
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+        }
+
+        function deleteAccount() {
+            if (confirm('Tem certeza que deseja eliminar sua conta? Esta aÃ§Ã£o nÃ£o pode ser desfeita.')) {
+                if (confirm('Digite "ELIMINAR" para confirmar:')) {
+                    const confirmation = prompt('Digite "ELIMINAR" para confirmar permanentemente:');
+                    if (confirmation === 'ELIMINAR') {
+                        localStorage.removeItem('airnetUser');
+                        window.location.href = 'inicio.html';
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
